@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportShop - Tienda Deportiva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra superior -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>SportShop</h1>
+            </div>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#contacto">Contacto</a>
+                <button id="cart-btn" class="cart-btn">
+                    Carrito (<span id="cart-count">0</span>)
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de búsqueda -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Buscar productos, marcas...">
+                <button id="search-btn">🔍</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Listado de productos -->
+    <main class="main">
+        <div class="container">
+            <h2>Productos Deportivos</h2>
+            <div id="products-grid" class="products-grid">
+                <!-- Los productos se cargarán dinámicamente -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal del carrito -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: $<span id="total-amount">0</span></h3>
+                <button id="checkout-btn" class="checkout-btn">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
