@@ -1,28 +1,28 @@
 // Productos deportivos expandidos
 const productos = [
     // Calzado
-    { id: 1, nombre: "Nike Air Max 270", precio: 150, categoria: "calzado", marca: "Nike", imagen: "https://via.placeholder.com/250x200/3498db/ffffff?text=Nike+Air+Max", valoracion: 4.5, inventario: 15 },
-    { id: 2, nombre: "Adidas Ultraboost 22", precio: 180, categoria: "calzado", marca: "Adidas", imagen: "https://via.placeholder.com/250x200/000000/ffffff?text=Adidas+Ultra", valoracion: 4.7, inventario: 8 },
-    { id: 3, nombre: "Puma RS-X", precio: 110, categoria: "calzado", marca: "Puma", imagen: "https://via.placeholder.com/250x200/ff6b35/ffffff?text=Puma+RS-X", valoracion: 4.2, inventario: 12 },
-    { id: 4, nombre: "New Balance 990v5", precio: 175, categoria: "calzado", marca: "New Balance", imagen: "https://via.placeholder.com/250x200/7f8c8d/ffffff?text=NB+990v5", valoracion: 4.6, inventario: 6 },
+    { id: 1, nombre: "Nike Air Max 270", precio: 600000, categoria: "calzado", marca: "Nike", imagen: "Images/NikeAir270.jpeg", valoracion: 4.5, inventario: 15 },
+    { id: 2, nombre: "Adidas Ultraboost 22", precio: 720000, categoria: "calzado", marca: "Adidas", imagen: "Images/AdidasUltraboost22.jpeg", valoracion: 4.7, inventario: 8 },
+    { id: 3, nombre: "Puma RS-X", precio: 440000, categoria: "calzado", marca: "Puma", imagen: "Images/PumaRS-X.jpeg", valoracion: 4.2, inventario: 12 },
+    { id: 4, nombre: "New Balance 990v5", precio: 700000, categoria: "calzado", marca: "New Balance", imagen: "Images/NewBalance990v5.jpeg", valoracion: 4.6, inventario: 6 },
     
     // Ropa
-    { id: 5, nombre: "Camiseta Dri-FIT Nike", precio: 35, categoria: "ropa", marca: "Nike", imagen: "https://via.placeholder.com/250x200/e74c3c/ffffff?text=Nike+Dri-FIT", valoracion: 4.3, inventario: 25 },
-    { id: 6, nombre: "Sudadera Adidas Originals", precio: 65, categoria: "ropa", marca: "Adidas", imagen: "https://via.placeholder.com/250x200/2c3e50/ffffff?text=Adidas+Hoodie", valoracion: 4.4, inventario: 18 },
-    { id: 7, nombre: "Shorts Under Armour", precio: 40, categoria: "ropa", marca: "Under Armour", imagen: "https://via.placeholder.com/250x200/e67e22/ffffff?text=UA+Shorts", valoracion: 4.1, inventario: 20 },
-    { id: 8, nombre: "Leggings Lululemon", precio: 98, categoria: "ropa", marca: "Lululemon", imagen: "https://via.placeholder.com/250x200/8e44ad/ffffff?text=Lululemon", valoracion: 4.8, inventario: 10 },
+    { id: 5, nombre: "Camiseta Dri-FIT Nike", precio: 140000, categoria: "ropa", marca: "Nike", imagen: "Images/CamisetaDri-FITNike.jpeg", valoracion: 4.3, inventario: 25 },
+    { id: 6, nombre: "Sudadera Adidas Originals", precio: 260000, categoria: "ropa", marca: "Adidas", imagen: "Images/SudaderaAdidasOriginals.jpeg", valoracion: 4.4, inventario: 18 },
+    { id: 7, nombre: "Shorts Under Armour", precio: 160000, categoria: "ropa", marca: "Under Armour", imagen: "Images/ShortsUnderArmour.jpeg", valoracion: 4.1, inventario: 20 },
+    { id: 8, nombre: "Leggings Lululemon", precio: 392000, categoria: "ropa", marca: "Lululemon", imagen: "Images/Leggings Lululemon.jpeg", valoracion: 4.8, inventario: 10 },
     
     // Equipamiento
-    { id: 9, nombre: "Pelota FIFA Wilson", precio: 45, categoria: "equipamiento", marca: "Wilson", imagen: "https://via.placeholder.com/250x200/27ae60/ffffff?text=FIFA+Ball", valoracion: 4.5, inventario: 30 },
-    { id: 10, nombre: "Raqueta Wilson Pro Staff", precio: 220, categoria: "equipamiento", marca: "Wilson", imagen: "https://via.placeholder.com/250x200/f39c12/ffffff?text=Wilson+Racket", valoracion: 4.7, inventario: 5 },
-    { id: 11, nombre: "Guantes Everlast Pro", precio: 85, categoria: "equipamiento", marca: "Everlast", imagen: "https://via.placeholder.com/250x200/9b59b6/ffffff?text=Everlast+Gloves", valoracion: 4.4, inventario: 14 },
-    { id: 12, nombre: "Bicicleta Trek Mountain", precio: 1200, categoria: "equipamiento", marca: "Trek", imagen: "https://via.placeholder.com/250x200/34495e/ffffff?text=Trek+Bike", valoracion: 4.9, inventario: 3 },
+    { id: 9, nombre: "Pelota FIFA Wilson", precio: 180000, categoria: "equipamiento", marca: "Wilson", imagen: "Images/PelotaFIFAWilson.jpeg", valoracion: 4.5, inventario: 30 },
+    { id: 10, nombre: "Raqueta Wilson Pro Staff", precio: 880000, categoria: "equipamiento", marca: "Wilson", imagen: "Images/RaquetaWilsonProStaff.jpeg", valoracion: 4.7, inventario: 5 },
+    { id: 11, nombre: "Guantes Everlast Pro", precio: 340000, categoria: "equipamiento", marca: "Everlast", imagen: "Images/GuantesEverlastPro.jpeg", valoracion: 4.4, inventario: 14 },
+    { id: 12, nombre: "Bicicleta Trek Mountain", precio: 4800000, categoria: "equipamiento", marca: "Trek", imagen: "Images/BicicletaTrekMountain.jpeg", valoracion: 4.9, inventario: 3 },
     
     // Fitness
-    { id: 13, nombre: "Mancuernas Bowflex 20kg", precio: 120, categoria: "fitness", marca: "Bowflex", imagen: "https://via.placeholder.com/250x200/16a085/ffffff?text=Bowflex+Weights", valoracion: 4.6, inventario: 8 },
-    { id: 14, nombre: "Banda Elástica TRX", precio: 55, categoria: "fitness", marca: "TRX", imagen: "https://via.placeholder.com/250x200/e74c3c/ffffff?text=TRX+Band", valoracion: 4.3, inventario: 22 },
-    { id: 15, nombre: "Esterilla Yoga Manduka", precio: 75, categoria: "fitness", marca: "Manduka", imagen: "https://via.placeholder.com/250x200/9b59b6/ffffff?text=Yoga+Mat", valoracion: 4.7, inventario: 16 },
-    { id: 16, nombre: "Kettlebell 16kg", precio: 65, categoria: "fitness", marca: "CAP", imagen: "https://via.placeholder.com/250x200/2c3e50/ffffff?text=Kettlebell", valoracion: 4.5, inventario: 12 }
+    { id: 13, nombre: "Mancuernas Bowflex 20kg", precio: 480000, categoria: "fitness", marca: "Bowflex", imagen: "Images/MancuernasBowflex20kg.jpeg", valoracion: 4.6, inventario: 8 },
+    { id: 14, nombre: "Banda Elástica TRX", precio: 220000, categoria: "fitness", marca: "TRX", imagen: "Images/BandaElásticaTRX.png", valoracion: 4.3, inventario: 22 },
+    { id: 15, nombre: "Esterilla Yoga Manduka", precio: 300000, categoria: "fitness", marca: "Manduka", imagen: "Images/EsterillaYogaManduka.jpeg", valoracion: 4.7, inventario: 16 },
+    { id: 16, nombre: "Kettlebell 16kg", precio: 260000, categoria: "fitness", marca: "CAP", imagen: "Images/Kettlebell16kg.jpeg", valoracion: 4.5, inventario: 12 }
 ];
 
 const categorias = [
@@ -75,7 +75,7 @@ function mostrarProductos(listaProductos = productosFiltrados) {
                     <span class="stars">${estrellas}</span>
                     <span class="rating-value">(${producto.valoracion})</span>
                 </div>
-                <p class="price">$${producto.precio}</p>
+                <p class="price">$${producto.precio.toLocaleString('es-CO')}</p>
                 <p class="stock ${claseInventario}">${estadoInventario}</p>
                 <button class="add-to-cart" onclick="agregarAlCarrito(${producto.id})" ${producto.inventario === 0 ? 'disabled' : ''}>
                     ${producto.inventario > 0 ? 'Agregar al Carrito' : 'Sin Stock'}
@@ -151,7 +151,7 @@ function mostrarElementosCarrito() {
             <img src="${elemento.imagen}" alt="${elemento.nombre}">
             <div class="item-info">
                 <h4>${elemento.nombre}</h4>
-                <p>$${elemento.precio} c/u</p>
+                <p>$${elemento.precio.toLocaleString('es-CO')} c/u</p>
             </div>
             <div class="item-controls">
                 <button class="quantity-btn" onclick="cambiarCantidad(${elemento.id}, -1)">-</button>
@@ -160,7 +160,7 @@ function mostrarElementosCarrito() {
                 <button class="remove-btn" onclick="eliminarDelCarrito(${elemento.id})">Eliminar</button>
             </div>
             <div>
-                <strong>$${elemento.precio * elemento.cantidad}</strong>
+                <strong>$${(elemento.precio * elemento.cantidad).toLocaleString('es-CO')}</strong>
             </div>
         `;
         elementosCarrito.appendChild(elementoCarrito);
@@ -195,7 +195,7 @@ function eliminarDelCarrito(idProducto) {
 // Actualizar total
 function actualizarTotal() {
     const total = carrito.reduce((suma, elemento) => suma + (elemento.precio * elemento.cantidad), 0);
-    montoTotal.textContent = total.toFixed(2);
+    montoTotal.textContent = total.toLocaleString('es-CO');
 }
 
 // Sistema de filtros y búsqueda
@@ -253,7 +253,7 @@ function mostrarModalPago() {
             <h2>Finalizar Compra</h2>
             <div class="payment-summary">
                 <h3>Resumen del Pedido</h3>
-                <p>Total a pagar: <strong>$${total.toFixed(2)}</strong></p>
+                <p>Total a pagar: <strong>$${total.toLocaleString('es-CO')}</strong></p>
             </div>
             
             <form id="formulario-pago">
@@ -295,12 +295,12 @@ function mostrarModalPago() {
                     <div class="efectivo-info">
                         <h4>Pago en Efectivo</h4>
                         <p>📦 El pago se realizará al momento de la entrega</p>
-                        <p>💰 Tenga el monto exacto: <strong>$${total.toFixed(2)}</strong></p>
+                        <p>💰 Tenga el monto exacto: <strong>$${total.toLocaleString('es-CO')}</strong></p>
                         <p>🚚 Tiempo de entrega: 2-3 días hábiles</p>
                     </div>
                 </div>
                 
-                <button type="submit" class="pay-btn">Confirmar Pedido - $${total.toFixed(2)}</button>
+                <button type="submit" class="pay-btn">Confirmar Pedido - $${total.toLocaleString('es-CO')}</button>
             </form>
         </div>
     `;
@@ -343,7 +343,7 @@ function mostrarCamposPago() {
     if (metodoPago === 'tarjeta') {
         camposTarjeta.style.display = 'block';
         camposEfectivo.style.display = 'none';
-        botonPago.textContent = `Pagar $${carrito.reduce((suma, elemento) => suma + (elemento.precio * elemento.cantidad), 0).toFixed(2)}`;
+        botonPago.textContent = `Pagar $${carrito.reduce((suma, elemento) => suma + (elemento.precio * elemento.cantidad), 0).toLocaleString('es-CO')}`;
         
         // Hacer campos requeridos
         document.getElementById('numeroTarjeta').required = true;
@@ -353,7 +353,7 @@ function mostrarCamposPago() {
     } else {
         camposTarjeta.style.display = 'none';
         camposEfectivo.style.display = 'block';
-        botonPago.textContent = `Confirmar Pedido - $${carrito.reduce((suma, elemento) => suma + (elemento.precio * elemento.cantidad), 0).toFixed(2)}`;
+        botonPago.textContent = `Confirmar Pedido - $${carrito.reduce((suma, elemento) => suma + (elemento.precio * elemento.cantidad), 0).toLocaleString('es-CO')}`;
         
         // Quitar requerimientos
         document.getElementById('numeroTarjeta').required = false;
@@ -399,7 +399,7 @@ function procesarPago(e) {
     setTimeout(() => {
         const numeroPedido = generarNumeroPedido();
         
-        let mensaje = `¡Pedido confirmado!\n\nNúmero de orden: ${numeroPedido}\nTotal: $${total.toFixed(2)}\n`;
+        let mensaje = `¡Pedido confirmado!\n\nNúmero de orden: ${numeroPedido}\nTotal: $${total.toLocaleString('es-CO')}\n`;
         
         if (metodoPago === 'tarjeta') {
             mensaje += '\n💳 Pago procesado con tarjeta\nRecibirás un email de confirmación.';
