@@ -1,0 +1,31 @@
+{
+  "name": "comercio-electronico",
+  "version": "1.0.0",
+  "description": "API para sistema de comercio electonico",
+  "homepage": "https://github.com/kcaicedo31/Proyecto_Final#readme",
+  "bugs": {
+    "url": "https://github.com/kcaicedo31/Proyecto_Final/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kcaicedo31/Proyecto_Final.git"
+  },
+  "license": "ISC",
+  "author": "Kevin caicedo, Santiago vela",
+  "type": "commonjs",
+  "main": "server/server.js",
+  "scripts": {
+   "start": "node server/server.js",
+  "dev": "nodemon server/server.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mysql2": "^3.15.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
