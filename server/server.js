@@ -35,6 +35,40 @@ app.get('/api/productos', (req, res) => {
     });
 });
 
+app.get('/api/productos/filtrar', (req, res) => {
+    const { categoria, ordenar } = req.query;
+    let query = 'SELECT * FROM productos WHERE 1=1';
+    const params = [];
+
+    console.log('Filtros recibidos:', { categoria, ordenar });
+
+    if (categoria && categoria !== 'all') {
+        query += ' AND categoria = ?';
+        params.push(categoria);
+    }
+
+    if (ordenar === 'price-low') {
+        query += ' ORDER BY precio ASC';
+    } else if (ordenar === 'price-high') {
+        query += ' ORDER BY precio DESC';
+    } else if (ordenar === 'rating') {
+        query += ' ORDER BY valoracion DESC';
+    } else {
+        query += ' ORDER BY nombre ASC';
+    }
+
+    console.log('Query ejecutado:', query);
+
+    connection.query(query, params, (error, results) => {
+        if (error) {
+            console.error('Error en BD:', error);
+            return res.status(500).json({ error: 'Error al filtrar productos' });
+        }
+        console.log('Productos encontrados:', results.length);
+        res.json(results);
+    });
+});
+
 app.get('/api/productos/:id', (req, res) => {
     const productId = req.params.id;
     const query = 'SELECT * FROM productos WHERE id = ?';
