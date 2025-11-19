@@ -4,12 +4,23 @@ let productosFiltrados = [];
 
 async function cargarProductos() {
     try {
+        console.log('Cargando productos...');
         const response = await fetch('/api/productos');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         productos = await response.json();
+        console.log('Productos cargados:', productos.length);
         productosFiltrados = [...productos];
         mostrarProductos();
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error al cargar productos:', error);
+        const container = document.getElementById('products-grid');
+        if (container) {
+            container.innerHTML = '<p>Error al cargar productos. Verifica que el servidor esté ejecutándose.</p>';
+        }
     }
 }
 

@@ -1,20 +1,27 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
+console.log('Variables de entorno:');
+console.log('DB_HOST:', process.env.DB_HOST);
+console.log('DB_PORT:', process.env.DB_PORT);
+console.log('SERVER_PORT:', PORT);
 
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..')));
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'sportshop_db'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'sportshop_db',
+    port: process.env.DB_PORT || 3306
 });
 
 connection.connect((error) => {
@@ -26,10 +33,30 @@ connection.connect((error) => {
 });
 
 app.get('/api/productos', (req, res) => {
+    console.log('Solicitud recibida para obtener productos');
     const query = 'SELECT * FROM productos';
     connection.query(query, (error, results) => {
         if (error) {
+            console.error('Error en consulta:', error);
             return res.status(500).json({ error: 'Error al obtener productos' });
+        }
+        console.log('Productos encontrados:', results.length);
+        res.json(results);
+    });
+});
+
+app.get('/api/productos/buscar', (req, res) => {
+    const { q } = req.query;
+    if (!q) {
+        return res.status(400).json({ error: 'Parámetro de búsqueda requerido' });
+    }
+    
+    const query = 'SELECT * FROM productos WHERE nombre LIKE ? OR marca LIKE ? OR categoria LIKE ?';
+    const searchTerm = `%${q}%`;
+    
+    connection.query(query, [searchTerm, searchTerm, searchTerm], (error, results) => {
+        if (error) {
+            return res.status(500).json({ error: 'Error en búsqueda' });
         }
         res.json(results);
     });
@@ -40,8 +67,6 @@ app.get('/api/productos/filtrar', (req, res) => {
     let query = 'SELECT * FROM productos WHERE 1=1';
     const params = [];
 
-    console.log('Filtros recibidos:', { categoria, ordenar });
-
     if (categoria && categoria !== 'all') {
         query += ' AND categoria = ?';
         params.push(categoria);
@@ -51,20 +76,14 @@ app.get('/api/productos/filtrar', (req, res) => {
         query += ' ORDER BY precio ASC';
     } else if (ordenar === 'price-high') {
         query += ' ORDER BY precio DESC';
-    } else if (ordenar === 'rating') {
-        query += ' ORDER BY valoracion DESC';
     } else {
         query += ' ORDER BY nombre ASC';
     }
 
-    console.log('Query ejecutado:', query);
-
     connection.query(query, params, (error, results) => {
         if (error) {
-            console.error('Error en BD:', error);
             return res.status(500).json({ error: 'Error al filtrar productos' });
         }
-        console.log('Productos encontrados:', results.length);
         res.json(results);
     });
 });
@@ -87,15 +106,15 @@ app.get('/api/productos/:id', (req, res) => {
 });
 
 app.post('/api/productos', (req, res) => {
-    const { nombre, marca, precio, imagen, categoria } = req.body;
+    const { nombre, marca, precio, imagen, categoria, stock = 0, descripcion = '' } = req.body;
     
-    if (!nombre || !marca || !precio) {
+    if (!nombre || !marca || !precio || !categoria) {
         return res.status(400).json({ error: 'Faltan datos obligatorios' });
     }
     
-    const query = 'INSERT INTO productos (nombre, marca, precio, imagen, categoria) VALUES (?, ?, ?, ?, ?)';
+    const query = 'INSERT INTO productos (nombre, marca, precio, imagen, categoria, stock, descripcion) VALUES (?, ?, ?, ?, ?, ?, ?)';
     
-    connection.query(query, [nombre, marca, precio, imagen, categoria], (error, results) => {
+    connection.query(query, [nombre, marca, precio, imagen, categoria, stock, descripcion], (error, results) => {
         if (error) {
             return res.status(500).json({ error: 'Error al crear producto' });
         }
@@ -109,11 +128,11 @@ app.post('/api/productos', (req, res) => {
 
 app.put('/api/productos/:id', (req, res) => {
     const productId = req.params.id;
-    const { nombre, marca, precio, imagen, categoria } = req.body;
+    const { nombre, marca, precio, imagen, categoria, stock, descripcion } = req.body;
     
-    const query = 'UPDATE productos SET nombre = ?, marca = ?, precio = ?, imagen = ?, categoria = ? WHERE id = ?';
+    const query = 'UPDATE productos SET nombre = ?, marca = ?, precio = ?, imagen = ?, categoria = ?, stock = ?, descripcion = ? WHERE id = ?';
     
-    connection.query(query, [nombre, marca, precio, imagen, categoria, productId], (error, results) => {
+    connection.query(query, [nombre, marca, precio, imagen, categoria, stock, descripcion, productId], (error, results) => {
         if (error) {
             return res.status(500).json({ error: 'Error al actualizar producto' });
         }
